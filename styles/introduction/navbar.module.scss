@@ -1,0 +1,56 @@
+@import "../colors";
+@import "../mixins/mixins";
+
+.navbar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  z-index: 10;
+  @include myFlex(row);
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 2% 10%;
+  transition: 0.3s all ease;
+
+  &_main_menu {
+    width: 50%;
+    @include myFlex(row);
+    justify-content: space-between;
+    & > p {
+      font-size: 1em;
+      transition: color 0.3s;
+      cursor: pointer;
+      &.active {
+        color: $mainColor;
+      }
+      &:hover {
+        color: $mainColor;
+      }
+    }
+  }
+  &_app_name {
+    font-size: 2em;
+  }
+}
+
+.main_menu_mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 1080px) {
+  .navbar_main_menu {
+    display: none;
+  }
+  .main_menu_mobile {
+    display: inline;
+  }
+}
+
+.scroll {
+  transition: 0.3s all ease;
+  padding: 1.5% 10%;
+  background-color: white;
+  box-shadow: 4px 0 20px -10px rgb(0 0 0 / 20%);
+}

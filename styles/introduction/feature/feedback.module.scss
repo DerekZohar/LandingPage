@@ -1,0 +1,38 @@
+@import "../../colors";
+@import "../../mixins/mixins";
+
+.feature_feedback {
+  @include myFlex(row);
+  align-items: center;
+
+  padding: 5% 10%;
+  &_img {
+    height: 90%;
+    width: 90%;
+  }
+  &_group {
+    @include myFlex(column);
+    align-items: space-between;
+
+    margin: 5% 0 0 10%;
+    &_title {
+      font: {
+        size: 3rem;
+        weight: bold;
+      }
+    }
+    &_content {
+      color: $subTextColor;
+      font: {
+        size: 1rem;
+      }
+      margin: 5% 0 15% 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 1080px) {
+  .feature_feedback {
+    @include myFlex(column);
+  }
+}
